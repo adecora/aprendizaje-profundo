@@ -1,0 +1,41 @@
+% Portada personalizada
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \includegraphics[width=0.22\textwidth]{assets/logo-uned.jpg}
+
+    \vfill
+
+    {\Huge\bfseries MIIA\par}
+    \vspace{0.6cm}
+    {\LARGE\bfseries APRENDIZAJE PROFUNDO\par}
+    \vspace{0.4cm}
+    {\Large\bfseries PEC 1\par}
+
+    \vfill
+
+    \begin{flushleft}
+        \textbf{Autor:} Alejandro de Cora\\
+        \textbf{Actualizado:} \today
+    \end{flushleft}
+
+\end{titlepage}
+
+% Índice del documento
+$if(toc)$
+\tableofcontents
+\clearpage
+$endif$
+
+% Lista de figuras, si está activada
+$if(lof)$
+\listoffigures
+\clearpage
+$endif$
+
+% Lista de tablas, si está activada
+$if(lot)$
+\listoftables
+\clearpage
+$endif$

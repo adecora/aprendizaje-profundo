@@ -1,0 +1,35 @@
+[project]
+name = "ap-pec1"
+version = "0.1.0"
+description = "MIIA: Aprendizaje Profundo, PEC 1"
+readme = "README.md"
+authors = [
+    { name = "Alejandro de Cora", email = "alejandrodecora@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "pandas>=3.1.0",
+    "tensorflow>=2.21.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/adecora"
+Personal = "https://alejandrodecora.es"
+
+[project.scripts]
+pec1 = "ap_pec1:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+# https://docs.astral.sh/uv/concepts/projects/dependencies/#dependency-groups
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.5",
+    "jupyterlab-quarto>=0.3.5",
+    "pytest>=9.2.0",
+]
