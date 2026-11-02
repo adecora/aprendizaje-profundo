@@ -15,4 +15,8 @@
   // Configuración de Zen Mode
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
+
+  // spell check, por si me cuelo
+  "cSpell.enabled": true,
+  "cSpell.language": "en,es-ES"
 }
