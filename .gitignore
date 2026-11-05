@@ -14,3 +14,6 @@ wheels/
 _freeze/
 /.quarto/
 **/*.quarto_ipynb
+
+# Checkpoints de los modelos de keras
+results/

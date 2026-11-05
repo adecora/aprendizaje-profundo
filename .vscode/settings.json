@@ -18,5 +18,16 @@
 
   // spell check, por si me cuelo
   "cSpell.enabled": true,
-  "cSpell.language": "en,es-ES"
+  "cSpell.language": "en,es-ES",
+  "cSpell.enabledFileTypes": {
+    "*": true,
+    "markdown": true,
+    "python": false
+  },
+  "cSpell.words": [
+    "hiperparámetros",
+    "multicapa",
+    "overfitting",
+    "perceptrón"
+  ]
 }

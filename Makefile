@@ -17,15 +17,16 @@ lint:
 	uvx ty check
 
 .PHONY: html
-html:
+html: pdf
 	$(QUARTO_CMD) render --to html
 
 .PHONY: pdf
 pdf:
-	$(QUARTO_CMD) render --no-clean --to pdf --output-dir $(CURRENT_DIR)
+	$(QUARTO_CMD) render mlp.ipynb --to pdf --output-dir $(CURRENT_DIR)
+	@if grep -q '<title>Redirect to mlp.html</title>' $(CURRENT_DIR)/index.html 2>/dev/null; then rm $(CURRENT_DIR)/index.html; fi
 
 .PHONY: preview
-preview:
+preview: pdf
 	$(QUARTO_CMD) preview --to html
 
 .PHONY: check

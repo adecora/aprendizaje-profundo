@@ -4,9 +4,9 @@
 
 El [perceptrón multicapa (MLP)](https://scikit-learn.org/stable/modules/neural_networks_supervised.html#multi-layer-perceptron).
 
-- [] Construir dos redes con A=3 y B=4 capas ocultas.
-- [] Para ambas redes crear dos versiones con diferentes números de neuronas en las capas ocultas. Comparar y analizar los resultados.
-- [] Para las redes A y B con mejores resultados del apartado anterior cambiar el factor de LearningRate y comparar los resultados con los obtenidos en el apartado 2.
+- [x] Construir dos redes con A=3 y B=4 capas ocultas.
+- [x] Para ambas redes crear dos versiones con diferentes números de neuronas en las capas ocultas. Comparar y analizar los resultados.
+- [x] Para las redes A y B con mejores resultados del apartado anterior cambiar el factor de LearningRate y comparar los resultados con los obtenidos en el apartado 2.
 
 > :memo: **Nota:**
 >

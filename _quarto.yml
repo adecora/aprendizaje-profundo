@@ -1,22 +1,23 @@
 project:
-  type: book
+  type: website
   output-dir: httdocs
+  render:
+    - mlp.ipynb
+  resources:
+    - mlp.ipynb
   preview:
     port: 4400
     browser: true
 
 lang: es
 
-book:
+title: "MIIA: Aprendizaje Profundo, PEC 1"
+author: "Alejandro de Cora"
+date: today
+
+website:
   title: "MIIA: Aprendizaje Profundo, PEC 1"
-  author: "Alejandro de Cora"
-  date: today
-  output-file: MIIA_Aprendizaje_Profundo_PEC1
-  downloads: [pdf]
-  chapters:
-    - index.md
-    - mlp.ipynb
-    - references.qmd
+  search: true
 
 bibliography: references.bib
 csl: https://www.zotero.org/styles/ieee-access
@@ -28,22 +29,26 @@ execute:
 format:
   html:
     theme:
-      light: [pandoc]
-      dark: [darkly]
-    # other-links:
-    #   - text: NASA Open Data
-    #     href: https://data.nasa.gov/
-    # code-links:
-    #   - text: Data Import Code
-    #     icon: file-code
-    #     href: data-import.py
+      light: pandoc
+      dark: darkly
     toc: true
     toc-depth: 3
     code-fold: false
     code-tools: false
     number-sections: true
+    other-links:
+      - text: PDF
+        icon: file-pdf
+        href: MIIA_Aprendizaje_Profundo_PEC1.pdf
+      - text: Jupyter
+        icon: file-code
+        href: mlp.ipynb
+    # css: styles.css
+
   pdf:
-    documentclass: scrreprt
+    output-file: MIIA_Aprendizaje_Profundo_PEC1.pdf
+    documentclass: scrartcl
+    titlepage: true
     toc: true
     number-sections: true
     colorlinks: true
@@ -52,11 +57,38 @@ format:
       - margin=2.5cm
     include-in-header:
       text: |
+        \usepackage{needspace}
         \usepackage{graphicx}
+        % Logo de la UNED en la portada
         \titlehead{%
           \centering
           \includegraphics[width=0.22\textwidth]{assets/logo-uned.jpg}
+          \par\vspace{2cm}
         }
+        % Ajuste de espacio entre título y autor en la portada
+        \usepackage{xpatch}
+        \makeatletter
+        \xpatchcmd{\@maketitle}
+          {\usekomafont{author}}
+          {\vspace{1cm}\usekomafont{author}}
+          {}{}
+        \makeatother
+        % Salto de página después de la portada
+        \let\originalmaketitle\maketitle
+        \renewcommand{\maketitle}{%
+          \originalmaketitle
+          \clearpage
+        }
+        % Salto de página después del índice de contenidos
+        \let\originaltableofcontents\tableofcontents
+        \renewcommand{\tableofcontents}{%
+          \originaltableofcontents
+          \clearpage
+        }
+        % Alinear arriba las figuras en páginas de flotantes
+        \makeatletter
+        \setlength{\@fptop}{0pt}
+        \makeatother
         \usepackage{fvextra}
         \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 
